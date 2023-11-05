@@ -1,0 +1,11 @@
+[
+  {
+    "coffeeName": "Macchiato",
+    "coffeeType": "macchiato",
+    "description": "The macchiato is an espresso coffee drink, topped with a small amount of foamed or steamed milk to allow the taste of the espresso to still shine through",
+    "sugar": 4,
+    "milk": 3,
+    "cream": 5,
+    "id": "be92e9e5748e4"
+  }
+]
