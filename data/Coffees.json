@@ -3,6 +3,7 @@
     "coffeeName": "Coffee latte",
     "coffeeType": "latte",
     "description": "A latte or caffè latte is a milk coffee that is a made up of one or two shots of espresso, steamed milk and a final, thin layer of frothed milk on top",
+    "price": 2.5,
     "sugar": 0,
     "milk": 0,
     "cream": 0
@@ -11,6 +12,7 @@
     "coffeeName": "Macchiato",
     "coffeeType": "macchiato",
     "description": "The macchiato is an espresso coffee drink, topped with a small amount of foamed or steamed milk to allow the taste of the espresso to still shine through",
+    "price": 2.7,
     "sugar": 0,
     "milk": 0,
     "cream": 0
@@ -19,6 +21,7 @@
     "coffeeName": "Cappuccino",
     "coffeeType": "cappuccino",
     "description": "A cappuccino is the perfect balance of espresso, steamed milk and foam",
+    "price": 2.8,
     "sugar": 0,
     "milk": 0,
     "cream": 0
@@ -27,6 +30,7 @@
     "coffeeName": "Americano",
     "coffeeType": "americano",
     "description": "An americano is just water and espresso. Is served 1/3 espresso to 2/3 water,",
+    "price": 2.0,
     "sugar": 0,
     "milk": 0,
     "cream": 0
@@ -35,6 +39,7 @@
     "coffeeName": "Espresso",
     "coffeeType": "espresso",
     "description": "Espresso is made by forcing very hot water under high pressure through finely ground compacted coffee",
+    "price": 2.0,
     "sugar": 0,
     "milk": 0,
     "cream": 0
@@ -43,6 +48,7 @@
     "coffeeName": "Domashno",
     "coffeeType": "domashno",
     "description": "Domashno coffee is a style of coffee prepared in a cezve using very finely ground coffee beans without filtering",
+    "price": 1.5,
     "sugar": 0,
     "milk": 0,
     "cream": 0

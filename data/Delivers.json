@@ -1,0 +1,14 @@
+[
+  {
+    "id": "6466513830402",
+    "name": "Magdalena",
+    "totalPrice": 13,
+    "location": "coffee shop"
+  },
+  {
+    "id": "6466513830401",
+    "name": "Dejan",
+    "location": "coffee shop",
+    "totalPrice": 5.2
+  }
+]

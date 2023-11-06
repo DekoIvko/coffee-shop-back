@@ -1,39 +1,37 @@
-const express = require('express');
-const dotenv = require('dotenv').config();
+const express = require("express");
+const dotenv = require("dotenv").config();
 
 const app = express();
 
 app.use(function (req, res, next) {
-  res.header('Access-Control-Allow-Origin', '*');
+  res.header("Access-Control-Allow-Origin", "*");
   //   // Request methods you wish to allow
-  res.setHeader(
-    'Access-Control-Allow-Methods',
-    'GET, POST, OPTIONS, PUT, PATCH, DELETE, HEAD'
-  );
+  res.setHeader("Access-Control-Allow-Methods", "GET, POST, OPTIONS, PUT, PATCH, DELETE, HEAD");
 
   res.header(
-    'Access-Control-Allow-Headers',
-    'Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Origin, Pragma, Cache-Control, Expires, Access-Control-Allow-Headers, Access-Control-Allow-Methods'
+    "Access-Control-Allow-Headers",
+    "Origin, X-Requested-With, Content-Type, Accept, Access-Control-Allow-Origin, Pragma, Cache-Control, Expires, Access-Control-Allow-Headers, Access-Control-Allow-Methods"
   );
   next();
 });
 
 // error handler
 app.use(function (err, req, res, next) {
-  logger.error('error', err);
+  logger.error("error", err);
   res.locals.message = err.message;
   res.locals.error = err;
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.render("error");
 });
-app.use('/api/coffee', require('./routes/coffeeRoutes')());
+app.use("/api/coffee", require("./routes/coffeeRoutes")());
+app.use("/api/deliver", require("./routes/deliverRoutes")());
 
-app.get('/', (req, res) => {
-  res.send('app is running');
+app.get("/", (req, res) => {
+  res.send("app is running");
 });
 
 const PORT = process.env.PORT || 5000;
 
-app.listen(PORT, console.log('server is running 5000'));
+app.listen(PORT, console.log("server is running 5000"));
