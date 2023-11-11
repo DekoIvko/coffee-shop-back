@@ -7,7 +7,6 @@ const get_my_coffees = require("../controllers/get_my_coffees");
 const add_coffee = require("../controllers/add_coffee");
 const update_coffee = require("../controllers/update_coffee");
 const remove_coffee = require("../controllers/remove_coffee");
-const remove_all_myCoffees = require("../controllers/remove_all_myCoffees");
 
 module.exports = function () {
   const app = express.Router();
@@ -32,10 +31,6 @@ module.exports = function () {
 
   app.post("/remove-coffee", async (req, res) => {
     remove_coffee.ServiceCall(req, res);
-  });
-
-  app.post("/remove-all-myCoffees", async (req, res) => {
-    remove_all_myCoffees.ServiceCall(req, res);
   });
 
   return app;
