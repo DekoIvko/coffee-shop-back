@@ -3,17 +3,19 @@ const fs = require("fs");
 const remove_all_myCoffees = function (myCoffees) {
   return new Promise(async function (resolve, reject) {
     try {
-      const json = await fs.readFileSync(require.resolve("../data/CoffeesOrdered.json"));
-      const jsonObj = JSON.parse(json);
-      const filterCoffees = jsonObj.filter((el) => !myCoffees.includes(el.id));
-      const updatedCoffees = JSON.stringify(filterCoffees, null, 2);
+      fs.readFile(require.resolve("../data/CoffeesOrdered.json"), (error, data) => {
+        if (error) throw error;
+        const jsonObj = JSON.parse(data);
+        const filterCoffees = jsonObj.filter((el) => !myCoffees.includes(el.id));
+        const updatedCoffees = JSON.stringify(filterCoffees, null, 2);
 
-      fs.writeFile(require.resolve("../data/CoffeesOrdered.json"), updatedCoffees, (err) => {
-        if (err) {
-          throw err;
-        } else {
-          resolve(true);
-        }
+        fs.writeFile(require.resolve("../data/CoffeesOrdered.json"), updatedCoffees, (err) => {
+          if (err) {
+            throw err;
+          } else {
+            resolve(true);
+          }
+        });
       });
     } catch (err) {
       reject(err.toString());
@@ -24,19 +26,20 @@ const remove_all_myCoffees = function (myCoffees) {
 const add_delivers = function (req, res) {
   return new Promise(async function (resolve, reject) {
     try {
-      const json = await fs.readFileSync(require.resolve("../data/Delivers.json"));
+      fs.readFile(require.resolve("../data/Delivers.json"), (error, data) => {
+        if (error) throw error;
+        const jsonObj = JSON.parse(data);
+        jsonObj.push(req.body.deliver);
 
-      const jsonObj = JSON.parse(json);
-      jsonObj.push(req.body.deliver);
+        const addDeliver = JSON.stringify(jsonObj, null, 2);
 
-      const addDeliver = JSON.stringify(jsonObj, null, 2);
-
-      await fs.writeFile(require.resolve("../data/Delivers.json"), addDeliver, async (err) => {
-        if (err) {
-          throw err;
-        } else {
-          resolve({ message: "Successfully add deliver" });
-        }
+        fs.writeFile(require.resolve("../data/Delivers.json"), addDeliver, (err) => {
+          if (err) {
+            throw err;
+          } else {
+            resolve({ message: "Successfully add deliver" });
+          }
+        });
       });
     } catch (err) {
       reject(err.toString());

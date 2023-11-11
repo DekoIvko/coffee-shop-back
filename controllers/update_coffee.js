@@ -3,7 +3,7 @@ const fs = require("fs");
 const update_coffee = function (req, res) {
   return new Promise(async function (resolve, reject) {
     try {
-      const json = await fs.readFileSync(require.resolve("../data/CoffeesOrdered.json"));
+      const json = await fs.readFile(require.resolve("../data/CoffeesOrdered.json"));
       const jsonObj = JSON.parse(json);
 
       const filterCoffees = jsonObj.filter((coffee) => coffee.id !== req.body.id);
