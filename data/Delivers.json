@@ -6,15 +6,33 @@
     "location": "coffee shop"
   },
   {
-    "id": "c4dacc34b3198",
-    "name": "dfgd",
+    "id": "821b36a464b26",
+    "name": "jule",
     "location": "coffee shop",
-    "totalPrice": 5.2
+    "totalPrice": 5
   },
   {
-    "id": "302d232a69053",
-    "name": "fdffgfd",
+    "id": "44056b5f99f82",
+    "name": "deko 1",
     "location": "coffee shop",
     "totalPrice": 2.7
+  },
+  {
+    "id": "20d345838a007",
+    "name": "deko 2",
+    "location": "coffee shop",
+    "totalPrice": 2.7
+  },
+  {
+    "id": "6a3309da6e8df",
+    "name": "maga 1",
+    "location": "coffee shop",
+    "totalPrice": 2.5
+  },
+  {
+    "id": "89afb76fd380f",
+    "name": "maga 2",
+    "location": "coffee shop",
+    "totalPrice": 2
   }
 ]

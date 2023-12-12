@@ -1,4 +1,5 @@
 const fs = require("fs");
+const EventEmitter = require("events");
 
 const remove_all_myCoffees = function (myCoffees) {
   return new Promise(async function (resolve, reject) {
@@ -26,6 +27,7 @@ const remove_all_myCoffees = function (myCoffees) {
 const add_delivers = function (req, res) {
   return new Promise(async function (resolve, reject) {
     try {
+      const emitter = new EventEmitter();
       fs.readFile(require.resolve("../data/Delivers.json"), (error, data) => {
         if (error) throw error;
         const jsonObj = JSON.parse(data);
@@ -37,6 +39,8 @@ const add_delivers = function (req, res) {
           if (err) {
             throw err;
           } else {
+            console.log("deko add delivers");
+            emitter.emit("add-deliver", addDeliver);
             resolve({ message: "Successfully add deliver" });
           }
         });

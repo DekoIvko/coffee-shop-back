@@ -3,11 +3,10 @@ const fs = require("fs");
 const add_coffees = function (req, res) {
   return new Promise(async function (resolve, reject) {
     try {
-      await fs.readFile(require.resolve("../data/CoffeesOrdered.json"), (error, data) => {
+      fs.readFile(require.resolve("../data/CoffeesOrdered.json"), (error, data) => {
         if (error) throw error;
         const jsonObj = JSON.parse(data);
         jsonObj.push(req.body);
-
         const addCoffee = JSON.stringify(jsonObj, null, 2);
 
         fs.writeFile(require.resolve("../data/CoffeesOrdered.json"), addCoffee, (err) => {
@@ -19,6 +18,7 @@ const add_coffees = function (req, res) {
         });
       });
     } catch (err) {
+      console.log(err);
       reject(err.toString());
     }
   });

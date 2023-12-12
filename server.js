@@ -25,6 +25,7 @@ app.use(function (err, req, res, next) {
   res.status(err.status || 500);
   res.render("error");
 });
+
 app.use("/api/coffee", require("./routes/coffeeRoutes")());
 app.use("/api/deliver", require("./routes/deliverRoutes")());
 
@@ -32,5 +33,9 @@ app.get("/", (req, res) => {
   res.send("app is running");
 });
 
+app.get("*", (req, res) => {
+  res.send("PAGE NOT FOUND");
+});
+
 const PORT = process.env.PORT || 8000;
-app.listen(PORT, console.log("server is running 5000"));
+app.listen(PORT, console.log(`server is running in port: ${PORT}`));
